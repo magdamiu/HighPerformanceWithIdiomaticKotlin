@@ -7,14 +7,14 @@ fun main() {
 }
 
 /* // no capturing lambda
-   public static final void main() {
+   public static final void inline.inline.main() {
       InteroperableJavaSamples interoperable = new InteroperableJavaSamples();
       interoperable.postponeComputation(1000, (Runnable)null.INSTANCE);
    }
  */
 
 /* // val
-   public static final void main() {
+   public static final void inline.inline.main() {
       final int number = 10;
       InteroperableJavaSamples interoperable = new InteroperableJavaSamples();
       interoperable.postponeComputation(1000, (Runnable)(new Runnable() {
@@ -28,7 +28,7 @@ fun main() {
  */
 
 /* // var
-   public static final void main() {
+   public static final void inline.inline.main() {
       final IntRef number = new IntRef();
       number.element = 10;
       InteroperableJavaSamples interoperable = new InteroperableJavaSamples();
