@@ -14,3 +14,5 @@ fun main() {
     println(sample.value) //260078462
     println(sample.value) //1657381068
 }
+
+data class ImmutableKey(val name: String? = null)

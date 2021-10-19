@@ -1,0 +1,1 @@
+class Location(@JvmField var latitude: Double, @JvmField var longitude: Double)

@@ -5,6 +5,22 @@ val java = Language("java")
 val scala = Language("scala")
 val languages = listOf(kotlin, java, scala)
 
+// Works
+fun List<Language>.getNames1(): List<String> = this
+    .map { it.name }
+    .filter { it != null }
+    .map { it!! }
+
+// Better
+fun List<Language>.getNames2(): List<String> = this
+    .map { it.name }
+    .filterNotNull()
+
+// Best
+fun List<Language>.getNames3(): List<String> = this
+    .mapNotNull { it.name }
+
+
 fun main() {
     val benchmarks = Benchmarks()
     benchmarks.forEachIterator()
@@ -12,7 +28,9 @@ fun main() {
 }
 
 open class Benchmarks {
-    inline fun <reified T> List<T>.customForEach(crossinline invoke: (T) -> Unit): Unit {
+    inline fun <reified T> List<T>.customForEach(
+        crossinline invoke: (T) -> Unit
+    ): Unit {
         val size = size
         var i = 0
         while (i < size) {
